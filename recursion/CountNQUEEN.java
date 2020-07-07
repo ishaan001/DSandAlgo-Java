@@ -29,7 +29,11 @@ public class CountNQUEEN {
 
 	
 	/* we are just check the the value above the point where
-	 * the Queen is to be placed*/
+	 * the Queen is to be placed
+	 * 
+	 * BY - IShaan Veer Dadhwal
+	 * */
+	
 	private static boolean isItSafe(boolean[][] board, int rows, int col) {
 		// TODO Auto-generated method stub
 		
