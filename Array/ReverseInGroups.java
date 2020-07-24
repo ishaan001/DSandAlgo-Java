@@ -19,10 +19,11 @@ public class ReverseInGroups {
 		     for(int i=0; i<arr.length;i++) {
 		    	 System.out.print(arr[i]+" ");
 		     }
+		    System.out.println();
+			testCase--;
 		    
 		}
-		System.out.println();
-		testCase--;
+		
 	}
 
 	private static void reverse(int[] arr, int len, int group) {
