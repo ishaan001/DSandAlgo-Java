@@ -6,5 +6,6 @@ Consist of Data structure and Algorithm concepts implemented in java from basics
 -	BASICS
 -	SOME CODEFORCES PROBLEMS
 -	RECURSION
+-	STACK
 
 
