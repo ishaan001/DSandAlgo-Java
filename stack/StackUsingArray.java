@@ -1,11 +1,11 @@
 package stack;
 
 public class StackUsingArray {
-	private int[] data;
-	private int top;
+	protected int[] data;
+	protected int top;
  
 	
-	private static final int DEFAULT_CAPACITY = 10;
+	protected static final int DEFAULT_CAPACITY = 10;
 	public StackUsingArray() {
 		this(DEFAULT_CAPACITY);
 	}
