@@ -3,6 +3,7 @@ package HackerEarth;
 import java.util.Scanner;
 import java.util.Stack;
 /*
+ * Stack - A game of numbers
  * Partially accepted */
 
 public class NumberGame {
