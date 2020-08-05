@@ -1,4 +1,4 @@
-package HackerEarth;
+package hackerEarth;
 
 import java.util.Scanner;
 import java.util.Stack;
