@@ -2,7 +2,7 @@ package linkedlist;
 
 public class LlClient {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
 		LinkedList ll = new LinkedList();
 		ll.addFirst(10);
@@ -14,6 +14,13 @@ public class LlClient {
 		ll.addFirst(50);
 		ll.display();
 		
+		ll.getFirst();
+		ll.getLast();
+		
+		ll.getAt(1);
+		//System.out.println(ll.getAtVersion2(3));
+		ll.addAt(0);
+		ll.display();
 
 	}
 
