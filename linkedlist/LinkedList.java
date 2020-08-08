@@ -83,7 +83,7 @@ public class LinkedList {
 		else
 			System.out.println(this.tail.data);
 	}
-	
+	//o(n)
 	public void getAt(int index) throws Exception {
 		
 		if(size==0) {
@@ -104,7 +104,7 @@ public class LinkedList {
 			}
 		}
 	}
-	
+	//o(n)
 	public int getAtVersion2(int index) throws Exception{
 		if(this.size ==0)
 			throw new Exception("empty");
@@ -118,6 +118,7 @@ public class LinkedList {
 		return temp.data;
 	}
 	
+	//O(n)
 	private Node getNodeAt(int index) throws Exception{
 		if(this.size ==0)
 			throw new Exception("empty");
@@ -130,6 +131,7 @@ public class LinkedList {
 		return temp ;
 	}
 
+	//O(n)
 	public void addAt(int index) throws Exception {
 		
 		if(index < 0 || index > this.size)
@@ -150,4 +152,27 @@ public class LinkedList {
 			this.size++;
 		}
 	}
+	
+	 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
