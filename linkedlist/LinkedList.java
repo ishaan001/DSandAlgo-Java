@@ -256,6 +256,20 @@ public class LinkedList {
 		this.tail.next = null;
 		 
 	}
+	
+	/*return the midpoint without using the size and in one traversal
+	 * we are using the fast and slow or (rabbit, turtle race)
+	 * */
+	public int midPoint() {
+		Node temp = this.head;
+		Node slow = temp;
+		Node fast = temp;
+		while(fast.next  != null && fast.next.next !=null) {
+			slow = slow.next;
+			fast = fast.next.next;
+		}
+		return slow.data;
+	}
 }
 
 

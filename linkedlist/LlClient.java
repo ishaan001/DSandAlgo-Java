@@ -24,16 +24,17 @@ public class LlClient {
 		//ll.display();
 		System.out.println(ll.removeFirst());
 		ll.display();
-		
+		/*
 		System.out.println(ll.removeLast());
-		ll.display();
+		ll.display();*/
 		
-		System.out.println(ll.removeAt(0));
-		ll.display();
+		/*System.out.println(ll.removeAt(0));
+		ll.display();*/
 		ll.reverseData();
 		ll.display();
 		ll.reversePointer();
 		ll.display();
+		System.out.println(ll.midPoint());
 	}
 
 }
