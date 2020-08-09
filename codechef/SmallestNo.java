@@ -47,23 +47,44 @@ public class SmallestNo {
 
 
 	public static void main(String[] args) {
+
+		// your code goes here
+		
 		// TODO Auto-generated method stub
-		 Scanner sc = new Scanner(System.in);
-		 int tc = sc.nextInt();
-		 while(tc>0) {
-			 int pc = sc.nextInt();
-			 int pr = sc.nextInt();
-			 String cPower = smallestNumber(pc);
-			 String rPower = smallestNumber(pr);
-			 System.out.println(cPower+" "+rPower);
-			 System.out.println(cPower.length()+" "+rPower.length());
-			 if(cPower.length() == rPower.length() || cPower.length() > rPower.length()) {
-				 System.out.println(1+" "+rPower.length());
-			}else if(cPower.length() < rPower.length()) {
-				System.out.println(0+" "+cPower.length());
+		 try {
+			Scanner sc = new Scanner(System.in);
+			 int tc = 0 ;
+			  
+				tc = sc.nextInt();
+			 while(tc>0) {
+				 int pc,pr;
+				 int pcd,prd;
+				 
+				  
+					 pc = sc.nextInt();
+				  
+					 pr = sc.nextInt();
+				 if(pc %9==0)
+					 pcd = pc/9;
+				 else
+					 pcd = pc/9+1;
+				 
+				 if(pr %9==0)
+					 prd = pr/9;
+				 else
+					 prd = pr/9+1;				 
+				 if(pcd == prd || pcd > prd) {
+					 System.out.println(1+" "+prd);
+				}else if(pcd < prd) {
+					System.out.println(0+" "+pcd);
+				 }
+				 tc--;
 			 }
-			 tc--;
-		 }
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
 	}
 
 }

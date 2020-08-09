@@ -153,7 +153,24 @@ public class LinkedList {
 		}
 	}
 	
-	 
+	//O(1)
+	public int removeFirst() throws Exception {
+		 
+		 if(this.size ==0) {
+			 throw new Exception("empty");
+		 }
+		 int val = head.data;
+		 if(size == 1) {
+			 
+			 head =null;
+			 tail =null;
+			 
+		 }else {
+			 head = head.next;	 
+		 }
+		 this.size--;
+		 return val;
+	 }
 }
 
 
