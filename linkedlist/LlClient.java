@@ -32,7 +32,8 @@ public class LlClient {
 		ll.display();
 		ll.reverseData();
 		ll.display();
-
+		ll.reversePointer();
+		ll.display();
 	}
 
 }

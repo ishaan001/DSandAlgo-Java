@@ -7,5 +7,6 @@ Consist of Data structure and Algorithm concepts implemented in java from basics
 -	SOME CODEFORCES PROBLEMS
 -	RECURSION
 -	STACK
+-	LINKED LIST
 
 

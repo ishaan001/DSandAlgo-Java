@@ -1,5 +1,7 @@
 package linkedlist;
 
+import org.omg.CORBA.Current;
+
 public class LinkedList {
 	/*
 	 * the node is the inner class of the linked list
@@ -234,6 +236,25 @@ public class LinkedList {
 			left++;
 			right--;
 		}
+	}
+	
+	public void reversePointer() throws Exception{
+		
+		Node prev = this.head ;
+		Node current = prev.next;
+		
+		
+		while(current != null) {
+			Node ahead = current.next;
+			current.next = prev;
+			prev = current;
+			current = ahead;
+		}
+		Node temp = this.head;
+		this.head  = this.tail ;
+		this.tail = temp;
+		this.tail.next = null;
+		 
 	}
 }
 
