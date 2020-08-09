@@ -121,11 +121,11 @@ public class LinkedList {
 	//O(n)
 	private Node getNodeAt(int index) throws Exception{
 		if(this.size ==0)
-			throw new Exception("empty");
-		if(index < 0 || index >= this.size)
-			throw new Exception("invalid details");
+			throw new Exception("empty"+this.size);
+		if(index < 0 || index > this.size)
+			throw new Exception("invalid details"+this.size);
 		Node temp =head;
-		for(int i=1; i<= index;i++) {
+		for(int i=1; i< index;i++) {
 			 temp=temp.next;
 		} 
 		return temp ;
@@ -171,6 +171,46 @@ public class LinkedList {
 		 this.size--;
 		 return val;
 	 }
+
+	public int removeLast() throws Exception{
+	int val ;
+	if(size == 0) {
+		throw new Exception("empty");
+	}
+	if(this.size == 1) {
+		val = tail.data;
+		head = null;
+		tail = null;
+		
+	}else {
+		Node temp = getNodeAt(this.size-1);
+		val = temp.next.data;
+		tail = temp;
+		tail.next = null;
+	}
+	this.size--;
+	return val;
+}
+	
+	public int removeAt( int index ) throws Exception {
+		int val;
+		if(this.size ==0 )
+			throw new Exception("empty");
+		if(index < 0 || index > this.size)
+			throw new Exception("invalid details");
+		else if(index == 1) {
+			val = removeFirst();
+		}
+		else if(index == this.size)
+			val = removeLast();
+		else {
+			Node temp = getNodeAt(index-1);
+			val = temp.next.data;
+			temp.next = temp.next.next;
+		}
+		this.size--;
+		return val;
+	}
 }
 
 

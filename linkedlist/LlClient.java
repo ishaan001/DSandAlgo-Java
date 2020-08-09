@@ -23,7 +23,10 @@ public class LlClient {
 		ll.display();
 		System.out.println(ll.removeFirst());
 		ll.display();
-		
+		System.out.println(ll.removeLast());
+		ll.display();
+		System.out.println(ll.removeAt(4));
+		ll.display();
 
 	}
 
