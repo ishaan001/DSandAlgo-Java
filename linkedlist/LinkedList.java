@@ -47,6 +47,7 @@ public class LinkedList {
 			this.tail = nn;
 			this.size++;
 		}
+		System.out.println(this.size);
 	}
 	
 	//O(1)
@@ -66,6 +67,7 @@ public class LinkedList {
 			this.head = nn; 
 			this.size++;
 		}
+		System.out.println(this.size);
 	}
 
 	//O(1)
@@ -125,7 +127,7 @@ public class LinkedList {
 		if(index < 0 || index > this.size)
 			throw new Exception("invalid details"+this.size);
 		Node temp =head;
-		for(int i=1; i< index;i++) {
+		for(int i=1; i<= index;i++) {
 			 temp=temp.next;
 		} 
 		return temp ;
@@ -151,6 +153,7 @@ public class LinkedList {
 			prevNode.next = nn;
 			this.size++;
 		}
+		System.out.println(this.size);
 	}
 	
 	//O(1)
@@ -169,6 +172,7 @@ public class LinkedList {
 			 head = head.next;	 
 		 }
 		 this.size--;
+		 System.out.println(this.size);
 		 return val;
 	 }
 
@@ -183,12 +187,13 @@ public class LinkedList {
 		tail = null;
 		
 	}else {
-		Node temp = getNodeAt(this.size-1);
+		Node temp = getNodeAt(this.size-2);
 		val = temp.next.data;
 		tail = temp;
 		tail.next = null;
 	}
 	this.size--;
+	System.out.println(this.size);
 	return val;
 }
 	
@@ -196,20 +201,39 @@ public class LinkedList {
 		int val;
 		if(this.size ==0 )
 			throw new Exception("empty");
-		if(index < 0 || index > this.size)
+		if(index < 0 || index >=  this.size)
 			throw new Exception("invalid details");
-		else if(index == 1) {
+		else if(index == 0) {
 			val = removeFirst();
 		}
-		else if(index == this.size)
+		else if(index == this.size-1)
 			val = removeLast();
 		else {
 			Node temp = getNodeAt(index-1);
 			val = temp.next.data;
 			temp.next = temp.next.next;
+			this.size--;
 		}
-		this.size--;
+		
+		System.out.println(this.size);
 		return val;
+	}
+	
+	public void reverseData() throws Exception {
+		int left = 0;
+		int right = this.size -1 ;
+		System.out.println(this.size);
+		while(left < right) {
+			Node ln = getNodeAt(left);
+			Node rn = getNodeAt(right);
+			
+			int temp = ln.data;
+			ln.data = rn.data;
+			rn.data = temp;
+			
+			left++;
+			right--;
+		}
 	}
 }
 

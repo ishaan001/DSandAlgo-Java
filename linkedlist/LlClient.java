@@ -21,11 +21,16 @@ public class LlClient {
 		//System.out.println(ll.getAtVersion2(3));
 		ll.addAt(0);
 		ll.display();
+		//ll.display();
 		System.out.println(ll.removeFirst());
 		ll.display();
+		
 		System.out.println(ll.removeLast());
 		ll.display();
-		System.out.println(ll.removeAt(4));
+		
+		System.out.println(ll.removeAt(0));
+		ll.display();
+		ll.reverseData();
 		ll.display();
 
 	}
