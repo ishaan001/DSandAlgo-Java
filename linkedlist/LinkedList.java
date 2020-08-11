@@ -16,6 +16,10 @@ public class LinkedList {
 	private Node tail;
 	private int size;
 	
+	
+	public int size() {
+		return this.size;
+	}
 	//O(n)
 	public void display() {
 		Node temp = head;
