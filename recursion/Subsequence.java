@@ -20,7 +20,7 @@ public class Subsequence {
 	/*
 	 * always remember that recursion always works
 	 * jo chhiye uska chotta part socho mil gaya and then ab woh add karo usme jo chhiye
-	 * and condiontion laga kar ban gaya result
+	 * and condition laga kar ban gaya result
 	 *  */
 	private static ArrayList<String> getsswASCII(String string) {
 		// TODO Auto-generated method stub
