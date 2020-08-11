@@ -53,7 +53,7 @@ public class LinkedList {
 			this.tail = nn;
 			this.size++;
 		}
-		System.out.println(this.size);
+	//	System.out.println(this.size);
 	}
 	
 	//O(1)
@@ -73,7 +73,7 @@ public class LinkedList {
 			this.head = nn; 
 			this.size++;
 		}
-		System.out.println(this.size);
+		//System.out.println(this.size);
 	}
 
 	//O(1)
@@ -274,6 +274,29 @@ public class LinkedList {
 		}
 		return slow.data;
 	}
+
+	public int kThNodeFromEnd(int k) throws Exception {
+		if(k<=0 && k>this.size) {
+			throw new Exception("Invalid details");
+		}
+		
+		Node slow = this.head;
+		Node fast = this.head;
+		int count = 1;
+		while(count<=k) {
+			fast = fast.next;
+			count++;
+		}
+		
+		while(fast != null) {
+			slow = slow.next;
+			fast = fast.next;
+		}
+		
+		return slow.data;
+	}
+
+
 }
 
 

@@ -14,27 +14,28 @@ public class LlClient {
 		ll.addFirst(50);
 		ll.display();
 		
-		ll.getFirst();
-		ll.getLast();
+		System.out.println(ll.kThNodeFromEnd(7));
+		//ll.getFirst();
+		/*ll.getLast();
 		
 		ll.getAt(1);
 		//System.out.println(ll.getAtVersion2(3));
-		ll.addAt(0);
-		ll.display();
+		ll.addAt(0);*/
 		//ll.display();
-		System.out.println(ll.removeFirst());
-		ll.display();
+		//ll.display();
+		/*System.out.println(ll.removeFirst());
+		ll.display();*/
 		/*
 		System.out.println(ll.removeLast());
 		ll.display();*/
 		
 		/*System.out.println(ll.removeAt(0));
 		ll.display();*/
-		ll.reverseData();
+		/*ll.reverseData();
 		ll.display();
 		ll.reversePointer();
 		ll.display();
-		System.out.println(ll.midPoint());
+		System.out.println(ll.midPoint());*/
 	}
 
 }
