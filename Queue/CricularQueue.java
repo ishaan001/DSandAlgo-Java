@@ -32,7 +32,7 @@ public class CricularQueue {
 	}
 	
 	public void enQueue(int val) {
-		if(this.isFull()) {
+		if(!this.isFull()) {
 			this.rear = (this.rear +1)%this.arr.length;
 			this.arr[this.rear] = val;
 			this.cs++;
@@ -55,7 +55,15 @@ public class CricularQueue {
 	
 		CricularQueue c1 = new CricularQueue(5);
 		c1.enQueue(20);
+		c1.enQueue(30);
+		c1.enQueue(40);
+		c1.enQueue(15);
+		c1.enQueue(55);
+		c1.enQueue(66);
 		System.out.println(c1.getFront());
+		c1.deQueue();
+		System.out.println(c1.getFront());
+		
 	}
 
 }
