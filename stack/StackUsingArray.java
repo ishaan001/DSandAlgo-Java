@@ -7,6 +7,7 @@ public class StackUsingArray {
 	
 	protected static final int DEFAULT_CAPACITY = 10;
 	public StackUsingArray() {
+		//calls parameterized constructor and pass this value to it
 		this(DEFAULT_CAPACITY);
 	}
 	

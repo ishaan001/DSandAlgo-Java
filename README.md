@@ -8,5 +8,6 @@ Consist of Data structure and Algorithm concepts implemented in java from basics
 -	RECURSION
 -	STACK
 -	LINKED LIST
+-	QUEUE
 
 
