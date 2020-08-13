@@ -1,5 +1,11 @@
 package Queue;
 
+/*In a normal Queue, 
+ * we can insert elements until queue becomes full. But once queue becomes full,
+ *  we can not insert the next element even if there is a space in front of queue.
+ *  
+ *  for that reason CricularQueue was introduced 
+*/
 public class CricularQueue {
 	
 	private int arr[];
@@ -59,10 +65,11 @@ public class CricularQueue {
 		c1.enQueue(40);
 		c1.enQueue(15);
 		c1.enQueue(55);
+		c1.deQueue();
 		c1.enQueue(66);
 		System.out.println(c1.getFront());
-		c1.deQueue();
-		System.out.println(c1.getFront());
+		
+		//System.out.println(c1.getFront());
 		
 	}
 
