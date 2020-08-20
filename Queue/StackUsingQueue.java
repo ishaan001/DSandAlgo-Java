@@ -13,10 +13,13 @@ public class StackUsingQueue {
 	
 	private Queue<Integer> primary = new LinkedList<Integer>();
 	private Queue<Integer> secondary = new LinkedList<Integer>();
-	
+
+	//O(1)
 	public void push(int val) {
 		primary.add(val);
 	}
+	
+	//O(n)
 	public int pop() {
 		while(primary.size() != 1) {
 			int i = primary.peek();

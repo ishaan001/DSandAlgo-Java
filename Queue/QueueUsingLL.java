@@ -8,7 +8,9 @@ public class QueueUsingLL {
 	QueueUsingLL(){
 		this.Queue = new LinkedList<>();
 	}
-	
+	public int size() {
+		return this.Queue.size();
+	}
 	public boolean isEmpty() {
 		return this.Queue.isEmpty();
 	}
@@ -25,6 +27,12 @@ public class QueueUsingLL {
 		return this.Queue.getFirst();
 	}
 	
+	public void display() {
+		for (Integer integer : Queue) {
+			System.out.print(integer+" ");
+		}
+	}
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
@@ -35,10 +43,11 @@ public class QueueUsingLL {
 		for(int i=1;i<5;i++) {
 			ll.enQueue(i);
 		}
-		while(!ll.isEmpty()) {
+		/*while(!ll.isEmpty()) {
 			System.out.println(ll.getFront());
 			ll.deQueue();
-		}
+		}*/
+		ll.display();
 		
 	}
 
