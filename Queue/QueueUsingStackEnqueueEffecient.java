@@ -5,6 +5,7 @@ import java.util.Stack;
 public class QueueUsingStackEnqueueEffecient {
 	private Stack<Integer> primary = new Stack<>();
 	private Stack<Integer> secondary = new Stack<>();
+	//O(n)
 	public void dequeue() {
 		while(primary.size() != 1) {
 			int val = primary.peek();
@@ -19,6 +20,7 @@ public class QueueUsingStackEnqueueEffecient {
 		}
 			
 	}
+	//O(n)
 	public int front() {
 
 		while(primary.size() != 1) {
@@ -36,9 +38,11 @@ public class QueueUsingStackEnqueueEffecient {
 	
 		return front;
 	}
+	//O(1)
 	public void enqueue(int item) {
 		primary.push(item);
 	}
+	//O(n)
 	public void display() {
 		while(!primary.isEmpty()) {
 			int val = primary.peek();
