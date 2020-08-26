@@ -23,7 +23,7 @@ public class FirstNonRepeatingChar {
 			}
 			else {
 				hm.put(c, 1);
-			}
+			} 
 			Boolean flag = true;
 			for(int i=0;i<sb.length();i++) {
 				char f  = sb.charAt(i); 
