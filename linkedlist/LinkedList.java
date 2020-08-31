@@ -301,7 +301,19 @@ public class LinkedList {
 		
 		return slow.data;
 	}
+	/*
+	 * reverse a Linked List using Recursion */
+	public void reversePrint(Node head) {
+        if(head == null){
+            return;
+        }
+         Node temp = head;
+         reversePrint(temp.next);
+        
+         System.out.println(temp.data);
 
+
+    }
 
 }
 
