@@ -1,5 +1,7 @@
 package generics;
 
+import java.util.Comparator;
+
 public class DemoDisplay {
 
 	public static void main(String[] args) {
@@ -20,7 +22,19 @@ public class DemoDisplay {
 		bubbleSort(cars);
 		display(cars);
 		
-		 
+		Bike[] bikes = new Bike[3];
+		bikes[0] = new Bike(3000, 110, "White");
+		bikes[1] = new Bike(4500, 170, "Blue");
+		bikes[2] = new Bike(5000, 190, "Grey");
+		
+		//display(bikes);
+		bubbleSort(bikes,new BikeSpeedComparator());
+		display(bikes);
+		bubbleSort(bikes, new BikeColorComparator());
+		display(bikes);
+		bubbleSort(bikes, new BikePriceComparator());
+		display(bikes);
+		
 
 	}
 	/*
@@ -68,12 +82,37 @@ public class DemoDisplay {
 	 * 
 	 * and override with compareTo function
 	 * */
+	
 	public static <T extends Comparable<T>>void bubbleSort(T[] arr){ 
 		int n = arr.length;
 		for(int i=0;i<n-1;i++) {
 			int swapped =0;
 			for(int j=0; j<n-1-i; j++) {
 				if(arr[j].compareTo(arr[j+1])>0){
+					T temp = arr[j]; 
+					arr[j] = arr[j+1];
+					arr[j+1] = temp;
+					
+					swapped = 1;	
+				}
+			}
+			if(swapped == 0) 
+				break;
+		}
+		 
+	}
+	
+	/*
+	 * suppose a situation where we haven't implemented the comparable interface  
+	 * then we use the comparator interface by creating the different class implementing the comparator interface
+	 * 
+	 * */
+	public static <T >void bubbleSort(T[] arr,Comparator<T> comparator){ 
+		int n = arr.length;
+		for(int i=0;i<n-1;i++) {
+			int swapped =0;
+			for(int j=0; j<n-1-i; j++) {
+				if(comparator.compare(arr[j], (arr[j+1]))>0){
 					T temp = arr[j]; 
 					arr[j] = arr[j+1];
 					arr[j+1] = temp;
