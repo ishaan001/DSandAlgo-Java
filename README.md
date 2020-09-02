@@ -9,6 +9,7 @@ Consist of Data structure and Algorithm concepts implemented in java from basics
 -	STACK
 -	LINKED LIST
 -	QUEUE
--	COLLECTIONS 
+-	COLLECTIONS
+-	INTERFACE AND GENERICS 
 
 
