@@ -1,6 +1,6 @@
 package generics;
 
-public class Car {
+public class Car implements Comparable<Car> {
 	int price;
 	int speed;
 	String color;
@@ -14,8 +14,14 @@ public class Car {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return "S: "+this.speed + " P: "+ this.price+" C: "+this.color;
+		return "\nS: "+this.speed + " P: "+ this.price+" C: "+this.color;
 	}
-	 
 
+	@Override
+	public int compareTo(Car other) {
+		// TODO Auto-generated method stub
+		//for the speed ---- return this.speed - other.speed;
+		return this.color.compareTo(other.color);  // for string 
+	}
+		 
 }

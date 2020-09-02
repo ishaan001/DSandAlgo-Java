@@ -17,6 +17,8 @@ public class DemoDisplay {
 		cars[4] = new Car(1500, 70, "Black");
 		
 		display(cars);
+		bubbleSort(cars);
+		display(cars);
 		
 		 
 
@@ -57,6 +59,32 @@ public class DemoDisplay {
 			System.out.print(i+" ");
 		}
 		System.out.println();
+	}
+	
+	/*
+	 * 
+	 * To compare the data type of a particular custom made class
+	 * that particular class have to implement the comparable interface 
+	 * 
+	 * and override with compareTo function
+	 * */
+	public static <T extends Comparable<T>>void bubbleSort(T[] arr){ 
+		int n = arr.length;
+		for(int i=0;i<n-1;i++) {
+			int swapped =0;
+			for(int j=0; j<n-1-i; j++) {
+				if(arr[j].compareTo(arr[j+1])>0){
+					T temp = arr[j]; 
+					arr[j] = arr[j+1];
+					arr[j+1] = temp;
+					
+					swapped = 1;	
+				}
+			}
+			if(swapped == 0) 
+				break;
+		}
+		 
 	}
 
 }
