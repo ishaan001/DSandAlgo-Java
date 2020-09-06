@@ -10,7 +10,7 @@ public class TowerOfHanoi {
 		int n = sc.nextInt();
 		
 		toh(n,"src","dest","helper");
-
+	/*	int count = toh_StepsCounter(n,"src","dest","helper");*/
 	}
 
 	private static void toh(int n, String source, String dest, String helper) {
@@ -22,5 +22,14 @@ public class TowerOfHanoi {
 		toh(n-1,helper,dest,source);
 		
 	}
+	/*private static int toh_StepsCounter(int n, String source, String dest, String helper) {
+		// TODO Auto-generated method stub
+		if(n==0)
+			return 0;
+		toh(n-1,source,helper,dest);
+		System.out.println("Move "+n+"th disc from "+source+" to "+dest);
+		toh(n-1,helper,dest,source);
+		
+	}*/
 
 }
