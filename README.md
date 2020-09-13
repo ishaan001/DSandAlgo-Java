@@ -1,6 +1,8 @@
 # DSandAlgo-Java
 Consist of Data structure and Algorithm concepts implemented in java from basics to advance. 
 
+TARGET IS TO COVER DS BY NOVEMBER 
+
 ##Topics Added
 -	ARRAY
 -	BASICS
