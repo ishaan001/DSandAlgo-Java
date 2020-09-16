@@ -7,8 +7,29 @@ public class Permutations {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		String str = "abc";
-		ArrayList<String> res = getPermu(str);
-		System.out.println(res);
+		//ArrayList<String> res = getPermu(str);
+		ArrayList<String> result = permutations(str);
+		System.out.println(result);
+	}
+	private static ArrayList<String> permutations(String str) {
+		// TODO Auto-generated method stub
+		if(str.length() == 0) {
+			ArrayList<String> end = new ArrayList<>();
+			end.add("");
+			return end;
+		}
+		char concat  = str.charAt(0);
+		String small = str.substring(1);
+		ArrayList<String> Final = new ArrayList<>();
+		ArrayList<String> res = permutations(small);
+		for (String ss : res) {
+			for(int j=0; j<=ss.length(); j++) {
+				String result = ss.substring(0, j)+concat+ss.substring(j);
+				Final.add(result);
+			}
+			
+		}
+ 		return Final;
 	}
 	/*
 	 * print all the permutation of a particular string
