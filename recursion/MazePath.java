@@ -10,7 +10,48 @@ public class MazePath {
 		for (String p : path) {
 			System.out.println(p);
 		}
+		
+		ArrayList<String> path1 = getMazePathDiagonal(0, 0, 2, 2);
+		for (String p : path1) {
+			System.out.println(p);
+		}
 
+	}
+	
+	/*
+	 * In how many ways we can reach from one pt of matrix to another 
+	 * in the condition where 1 Horizontal and 1 Vertical and 1Diagonal movement is allowed at time */
+	private static ArrayList<String> getMazePathDiagonal(int cr, int cc, int er, int ec) {
+		// TODO Auto-generated method stub
+		if(cr == er && cc == ec) {
+			//br = baseResult +ve cases
+			ArrayList<String> br = new ArrayList<>();
+			br.add("");
+			return br;
+		}
+		
+		if(cr > er || cc > ec) {
+			//br = baseResult -ve cases
+			ArrayList<String> br = new ArrayList<>();
+			return br;
+		}
+		ArrayList<String> finalResult = new ArrayList<>();
+		///for horizontal movement rrh = recurciveResultHorizontal
+		ArrayList<String> rrh = getMazePathDiagonal(cr, cc+1, er, ec);
+		for (String rrhs : rrh) {
+			finalResult.add("H"+rrhs);
+		}
+		// for vertical movement rrv = recurciveResultVertical
+		ArrayList<String> rrv = getMazePathDiagonal(cr+1, cc, er, ec);
+		for (String rrvs : rrv) {
+			finalResult.add("V"+rrvs);
+		}
+		// for diagonal movement rrd = recurciveResultDiagonal
+		ArrayList<String> rrd = getMazePathDiagonal(cr+1, cc+1, er, ec);
+		for (String rrds : rrd) {
+			finalResult.add("D"+rrds);
+		}
+		return finalResult;
 	}
 
 	/*
