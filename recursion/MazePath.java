@@ -13,6 +13,9 @@ public class MazePath {
 
 	}
 
+	/*
+	 * In how many ways we can reach from one pt of matrix to another 
+	 * in the condition where 1 Horizontal and 1 Vertical movement is allowed at time */
 	private static ArrayList<String> getMazePath(int cr, int cc, int er, int ec) {
 		// TODO Auto-generated method stub
 		if(cr == er && cc == ec) {
