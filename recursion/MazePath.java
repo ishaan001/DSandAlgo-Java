@@ -8,12 +8,12 @@ public class MazePath {
 		// TODO Auto-generated method stub
 		ArrayList<String> path = getMazePath(0,0,2,2);
 		for (String p : path) {
-			System.out.println(p);
+			System.out.print(p+" ");
 		}
-		
+		System.out.println("\nDaigonal added ----------------");
 		ArrayList<String> path1 = getMazePathDiagonal(0, 0, 2, 2);
 		for (String p : path1) {
-			System.out.println(p);
+			System.out.print(p+" ");
 		}
 
 	}
