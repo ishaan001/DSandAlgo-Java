@@ -10,16 +10,33 @@ public class MazePath {
 		for (String p : path) {
 			System.out.print(p+" ");
 		}
-		System.out.println("\nDaigonal added ----------------");
+		/*System.out.println("\nDaigonal added ----------------");
 		ArrayList<String> path1 = getMazePathDiagonal(0, 0, 2, 2);
 		for (String p : path1) {
 			System.out.print(p+" ");
 		}
 		System.out.println("\ncount added ----------------");
 		int countMaze = getCountMazePathDiagonal(0, 0, 2, 2);
-		System.out.println(countMaze);
+		System.out.println(countMaze);*/
+		
+		printMazePath(0, 0, 2, 2, "");
 	}
 	
+	public static void printMazePath(int cr, int cc, int er, int ec, String result) {
+		// TODO Auto-generated method stub
+		if(cr == er && cc == ec) {
+			System.out.println(result);
+			return;
+		} 
+		if(cr > er || cc > ec) {
+			return;
+		}
+		
+		printMazePath(cr, cc+1, er, ec, result +" H");
+		printMazePath(cr+1, cc, er, ec, result +"V");
+		
+	}
+
 	public static int getCountMazePathDiagonal(int cr, int cc, int er, int ec) {
 		// TODO Auto-generated method stub
 		if(cr == er && cc == ec) {
