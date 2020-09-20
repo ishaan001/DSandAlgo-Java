@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class MazePath {
 
 	public static void main(String[] args) {
-		/*// TODO Auto-generated method stub
+		// TODO Auto-generated method stub
 		ArrayList<String> path = getMazePath(0,0,2,2);
 		for (String p : path) {
 			System.out.print(p+" ");
@@ -19,11 +19,28 @@ public class MazePath {
 		int countMaze = getCountMazePathDiagonal(0, 0, 2, 2);
 		System.out.println(countMaze);
 		
-		printMazePath(0, 0, 2, 2, "");*/
+		printMazePath(0, 0, 2, 2, "");
 		int i = countMazePath(0, 0, 2, 2);
 		System.out.println(i);
+		printMazePathDiagonal(0, 0, 2, 2, "");
 	}
 	
+	public static void printMazePathDiagonal(int cr, int cc, int er, int ec, String result) {
+		// TODO Auto-generated method stub
+		if(cr == er && cc == ec) {
+			System.out.println(result);
+			return;
+		} 
+		if(cr > er || cc > ec) {
+			return;
+		}
+		
+		printMazePath(cr, cc+1, er, ec, result +"H");
+		printMazePath(cr+1, cc, er, ec, result +"V");
+		printMazePath(cr+1, cc+1, er, ec, result +"D");
+		
+	}
+
 	public static int countMazePath(int cr, int cc, int er, int ec) {
 		// TODO Auto-generated method stub
 		if(cr == er && cc == ec) {
@@ -49,7 +66,7 @@ public class MazePath {
 			return;
 		}
 		
-		printMazePath(cr, cc+1, er, ec, result +" H");
+		printMazePath(cr, cc+1, er, ec, result +"H");
 		printMazePath(cr+1, cc, er, ec, result +"V");
 		
 	}
