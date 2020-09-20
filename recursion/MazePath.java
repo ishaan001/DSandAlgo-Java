@@ -5,23 +5,40 @@ import java.util.ArrayList;
 public class MazePath {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		/*// TODO Auto-generated method stub
 		ArrayList<String> path = getMazePath(0,0,2,2);
 		for (String p : path) {
 			System.out.print(p+" ");
 		}
-		/*System.out.println("\nDaigonal added ----------------");
+		System.out.println("\nDaigonal added ----------------");
 		ArrayList<String> path1 = getMazePathDiagonal(0, 0, 2, 2);
 		for (String p : path1) {
 			System.out.print(p+" ");
 		}
 		System.out.println("\ncount added ----------------");
 		int countMaze = getCountMazePathDiagonal(0, 0, 2, 2);
-		System.out.println(countMaze);*/
+		System.out.println(countMaze);
 		
-		printMazePath(0, 0, 2, 2, "");
+		printMazePath(0, 0, 2, 2, "");*/
+		int i = countMazePath(0, 0, 2, 2);
+		System.out.println(i);
 	}
 	
+	public static int countMazePath(int cr, int cc, int er, int ec) {
+		// TODO Auto-generated method stub
+		if(cr == er && cc == ec) {
+			 
+			return 1;
+		} 
+		if(cr > er || cc > ec) {
+			return 0;
+		}
+		int count = 0;
+		count += countMazePath(cr, cc+1, er, ec );
+		count += countMazePath(cr+1, cc, er, ec );
+		return count;
+	}
+
 	public static void printMazePath(int cr, int cc, int er, int ec, String result) {
 		// TODO Auto-generated method stub
 		if(cr == er && cc == ec) {
