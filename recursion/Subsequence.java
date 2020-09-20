@@ -10,12 +10,30 @@ public class Subsequence {
 		// TODO Auto-generated method stub
 		System.out.println(getSS("abc"));
 		System.out.println(getsswASCII("ab"));
+		printSS("abc","");
 		
 		 
 
 	}
 
 	 
+
+	public static void printSS(String string, String result) {
+		// TODO Auto-generated method stub\
+		if(string.length() ==0 ) {
+			System.out.println(result);
+			return;
+		}
+		
+		
+		char cc = string.charAt(0);
+		String rest = string.substring(1);
+		printSS(rest,	result);
+		printSS(rest, result+cc);
+		
+	}
+
+
 
 	/*
 	 * always remember that recursion always works

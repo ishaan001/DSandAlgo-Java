@@ -10,7 +10,26 @@ public class Permutations {
 		//ArrayList<String> res = getPermu(str);
 		ArrayList<String> result = permutations(str);
 		System.out.println(result);
+		printPermutations(str,"");
 	}
+	
+	
+	public static void printPermutations(String str, String result) {
+		// TODO Auto-generated method stub
+		if(str.length() == 0) {
+			System.out.println(result);
+			return;
+		}
+		
+		for(int i=0; i<str.length(); i++) {
+			char c = str.charAt(i);
+			String rest = str.substring(0,i)+str.substring(i+1);
+			printPermutations(rest,result+c);
+		}
+		
+	}
+
+
 	private static ArrayList<String> permutations(String str) {
 		// TODO Auto-generated method stub
 		if(str.length() == 0) {
