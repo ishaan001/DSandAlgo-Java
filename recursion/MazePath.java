@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class MazePath {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	/*	// TODO Auto-generated method stub
 		ArrayList<String> path = getMazePath(0,0,2,2);
 		for (String p : path) {
 			System.out.print(p+" ");
@@ -21,7 +21,7 @@ public class MazePath {
 		
 		printMazePath(0, 0, 2, 2, "");
 		int i = countMazePath(0, 0, 2, 2);
-		System.out.println(i);
+		System.out.println(i);*/
 		printMazePathDiagonal(0, 0, 2, 2, "");
 	}
 	
@@ -35,9 +35,9 @@ public class MazePath {
 			return;
 		}
 		
-		printMazePath(cr, cc+1, er, ec, result +"H");
-		printMazePath(cr+1, cc, er, ec, result +"V");
-		printMazePath(cr+1, cc+1, er, ec, result +"D");
+		printMazePathDiagonal(cr, cc + 1, er, ec, result+ "H");
+		printMazePathDiagonal(cr + 1, cc, er, ec, result+ "V");
+		printMazePathDiagonal(cr + 1, cc + 1, er, ec, result + "D");
 		
 	}
 
