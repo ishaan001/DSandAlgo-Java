@@ -1,4 +1,4 @@
-package sameTimeComplexity;
+package spaceTimeComplexity;
 
 public class QuickSortImplementation {
 
