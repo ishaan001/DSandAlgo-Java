@@ -39,11 +39,11 @@ public class BackTracking_Queens {
 			
 		}
 		for(int i =lastBoxUsed + 1; i <boxes.length; i++) {
-			if(boxes[i] == false) {
+			 
 				boxes[i] = true;
 				queenCombinations(boxes, qpsf + 1, tq, ans + "q" + qpsf + "b" + i +" ", i);
 				boxes[i] = false;
-			}
+			 
 		}
 	}
 }
