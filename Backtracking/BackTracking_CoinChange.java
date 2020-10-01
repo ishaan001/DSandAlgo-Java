@@ -45,9 +45,10 @@ public class BackTracking_CoinChange {
 			return;
 		}
 		for (int i = 0; i < denominations.length; i++) {
+			//if (amt >= denominations[i]) {
 
 			coinChangePermutations(denominations, amt - denominations[i], ans + denominations[i] + " ");
-
+			//}
 		}
 	}
 
