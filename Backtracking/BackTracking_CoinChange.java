@@ -53,7 +53,13 @@ public class BackTracking_CoinChange {
 	}
 
 	// coin change w.r.t to coin 
-	public static void coinChangeCoinRespect() {
+	public static void coinChangeCoinRespect(int[] Denom, int vidx, int amount,String ans) {
+		
+		
+		//yes case  - is the denom is included
+		coinChangeCoinRespect(Denom, vidx, amount-Denom[vidx], ans + Denom[vidx]);
+		//no case  - denomination not included
+		coinChangeCoinRespect(Denom, vidx + 1, amount - Denom[vidx + 1], ans + Denom[vidx + 1]);
 		
 	}
 }
