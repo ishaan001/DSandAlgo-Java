@@ -13,7 +13,8 @@ public class BackTracking_CoinChange {
 		int[] denominations = { 2, 3, 5, 6 };
 
 		// coinChangeCombination(denominations, 10, "", 0);
-		coinChangePermutations(denominations, 10, "");
+		// coinChangePermutations(denominations, 10, "");
+		coinChangeCoinRespect(denominations, 0, 10, "");
 	}
 
 	static int count = 0;
@@ -55,11 +56,19 @@ public class BackTracking_CoinChange {
 	// coin change w.r.t to coin 
 	public static void coinChangeCoinRespect(int[] Denom, int vidx, int amount,String ans) {
 		
-		
+		//+ve base case 
+		if(amount == 0) {
+			System.out.println(ans);
+			return;
+		}
+		//if amount is negative or the denomination array is empty 
+		if(amount < 0 || Denom.length == vidx) {
+			return;
+		}
 		//yes case  - is the denom is included
 		coinChangeCoinRespect(Denom, vidx, amount-Denom[vidx], ans + Denom[vidx]);
 		//no case  - denomination not included
-		coinChangeCoinRespect(Denom, vidx + 1, amount - Denom[vidx + 1], ans + Denom[vidx + 1]);
+		coinChangeCoinRespect(Denom, vidx + 1, amount, ans);
 		
 	}
 }
