@@ -54,6 +54,7 @@ public class BackTracking_CoinChange {
 	}
 
 	// coin change w.r.t to coin 
+	//vidx = virtual index which mean from where we need to move the in the donomination array 
 	public static void coinChangeCoinRespect(int[] Denom, int vidx, int amount,String ans) {
 		
 		//+ve base case 
