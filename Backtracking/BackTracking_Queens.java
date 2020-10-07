@@ -14,6 +14,8 @@ public class BackTracking_Queens {
 		// queenCombinations(b, 0, 2, "", -1);
 		// queenCominationBoxRespect(b, 0, 0, 2, "");
 		queenCombination2D(new Boolean[2][2], 0, 0, 0, 2, "");
+		System.out.println("--------------------------------------------");
+		queenCombination2DRecursive(new Boolean[2][2], 0, 0, 0, 2, "");
 	}
 
 	static int count = 0;
@@ -94,6 +96,31 @@ public class BackTracking_Queens {
 		queenCombination2D(boxes, rows, col + 1, qpsf + 1, tq, ans + "{" + rows + "-" + col + "}");
 		boxes[rows][col] = false;
 		queenCombination2D(boxes, rows, col + 1, qpsf, tq, ans);
+
+	}
+	
+	public static void queenCombination2DRecursive(Boolean[][] boxes, int rows, int col, int qpsf, int tq, String ans) {
+
+		// +ve base case
+		if (qpsf == tq) {
+			System.out.println(ans);
+			return;
+		}
+
+		// -ve base case when the col length is exceded
+		if (col == boxes[0].length) {
+			queenCombination2DRecursive(boxes, rows+1, 0, qpsf, tq, ans);
+			return;
+		}
+
+		if (rows == boxes.length) {
+			return;
+		}
+
+		boxes[rows][col] = true;
+		queenCombination2DRecursive(boxes, rows, col + 1, qpsf + 1, tq, ans + "{" + rows + "-" + col + "}");
+		boxes[rows][col] = false;
+		queenCombination2DRecursive(boxes, rows, col + 1, qpsf, tq, ans);
 
 	}
 
