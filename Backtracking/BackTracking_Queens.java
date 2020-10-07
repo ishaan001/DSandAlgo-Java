@@ -13,9 +13,14 @@ public class BackTracking_Queens {
 		// queenPermutations(b, 0, 2, "");
 		// queenCombinations(b, 0, 2, "", -1);
 		// queenCominationBoxRespect(b, 0, 0, 2, "");
-		queenCombination2D(new Boolean[2][2], 0, 0, 0, 2, "");
+	/*	queenCombination2D(new Boolean[2][2], 0, 0, 0, 2, "");
 		System.out.println("--------------------------------------------");
-		queenCombination2DRecursive(new Boolean[2][2], 0, 0, 0, 2, "");
+		queenCombination2DRecursive(new Boolean[2][2], 0, 0, 0, 2, "");*/
+		Boolean[][] board = new Boolean[3][4];
+		for (int i = 0, len = board.length; i < len; i++)
+		    Arrays.fill(board[i], false);
+	 
+		queenCombination2DkillBoxRespect(board, 0, 0, 0, 3, "");
 	}
 
 	static int count = 0;
@@ -123,5 +128,76 @@ public class BackTracking_Queens {
 		queenCombination2DRecursive(boxes, rows, col + 1, qpsf, tq, ans);
 
 	}
+	//basically kind of or inital state on n queen
+	public static void queenCombination2DkillBoxRespect(Boolean[][] board, int rows, int col, int qpsf, int tq,
+			String ans) {
+		if (qpsf == tq) {
+			System.out.println(ans);
+			return;
+		}
 
+		if (col == board[0].length) {
+			rows++;
+			col = 0;
+		}
+
+		if (rows == board.length) {
+			return;
+		}
+		// placed condition
+		if (isItSafeToPlaceQueen(board, rows, col)) {
+			board[rows][col] = true;
+			queenCombination2DkillBoxRespect(board, rows, col + 1, qpsf + 1, tq, (ans + "{" + rows + "-" + col + "}"));
+			board[rows][col] = false;
+		}
+		// not placed condition
+		queenCombination2DkillBoxRespect(board, rows, col + 1, qpsf, tq, ans);
+	}
+
+	private static boolean isItSafeToPlaceQueen(Boolean[][] board, int rows, int col) {
+		// TODO Auto-generated method stub
+		//VERTICAL LINE
+		int r = rows - 1;
+		int c = col;
+		while(r >=0 ) {
+			if(board[r][c]) {
+				return false;
+			}
+			r--;
+		}
+		
+		//HORIZONTAL CASE
+		r = rows;
+		c = col - 1;
+		while(c >=0) {
+			if(board[r][c]) {
+				return false;
+			}
+			c--;
+		}
+		
+		//LEFT DIAGONAL
+		r = rows - 1;
+		c = col - 1;
+		while(c >=0 && r >=0) {
+			if(board[r][c]) {
+				return false;
+			}
+			c--;
+			r--;
+		}
+		
+		//RIGHT DIAGONAL
+		r = rows - 1;
+		c = col + 1;
+		while(c < board[0].length && r >=0) {
+			if(board[r][c]) {
+				return false;
+			}
+		c++;
+		r--;
+		}
+		
+		return true;
+	}
 }
