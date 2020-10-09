@@ -16,11 +16,11 @@ public class BackTracking_Queens {
 	/*	queenCombination2D(new Boolean[2][2], 0, 0, 0, 2, "");
 		System.out.println("--------------------------------------------");
 		queenCombination2DRecursive(new Boolean[2][2], 0, 0, 0, 2, "");*/
-		Boolean[][] board = new Boolean[3][4];
-		for (int i = 0, len = board.length; i < len; i++)
-		    Arrays.fill(board[i], false);
+		boolean[][] board = new boolean[4][4];
+		/*for (int i = 0, len = board.length; i < len; i++)
+		    Arrays.fill(board[i], false);*/
 	 
-		queenCombination2DkillBoxRespect(board, 0, 0, 0, 3, "");
+		queenCombination2DkillBoxRespect(board, 0, 0, 0, 4, "");
 	}
 
 	static int count = 0;
@@ -129,7 +129,7 @@ public class BackTracking_Queens {
 
 	}
 	//basically kind of or inital state on n queen
-	public static void queenCombination2DkillBoxRespect(Boolean[][] board, int rows, int col, int qpsf, int tq,
+	public static void queenCombination2DkillBoxRespect(boolean[][] board, int rows, int col, int qpsf, int tq,
 			String ans) {
 		if (qpsf == tq) {
 			System.out.println(ans);
@@ -154,7 +154,7 @@ public class BackTracking_Queens {
 		queenCombination2DkillBoxRespect(board, rows, col + 1, qpsf, tq, ans);
 	}
 
-	private static boolean isItSafeToPlaceQueen(Boolean[][] board, int rows, int col) {
+	private static boolean isItSafeToPlaceQueen(boolean[][] board, int rows, int col) {
 		// TODO Auto-generated method stub
 		//VERTICAL LINE
 		int r = rows - 1;
