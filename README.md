@@ -16,5 +16,5 @@ TARGET IS TO COVER DS BY NOVEMBER
 -   RECURSION IN DEPTH
 -	TIME COMPLEXITY
 -	BACKTRACKING <recursioning but giving fallback condition>
--	TREES
+-	TREES<BST, AVL>
 
