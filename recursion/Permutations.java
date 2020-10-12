@@ -6,7 +6,7 @@ public class Permutations {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String str = "abc";
+		String str = "aba";
 		//ArrayList<String> res = getPermu(str);
 		ArrayList<String> result = permutations(str);
 		System.out.println(result);
