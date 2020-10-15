@@ -85,5 +85,23 @@ public class BinaryTree {
 			display(node.right);
 
 	}
+	
+	public int height() {
+		return height(this.root);
+	}
+
+	private int height(Node node) {
+		// TODO Auto-generated method stub
+		if(node == null) {
+			return -1;
+		}
+		
+		int leftHeight = height(node.left);
+		int rightheight = height(node.right);
+		
+		int height = Math.max(leftHeight, rightheight) + 1;
+		
+		return height;
+	}
 
 }
