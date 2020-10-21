@@ -1,7 +1,7 @@
 # DSandAlgo-Java
 Consist of Data structure and Algorithm concepts implemented in java from basics to advance. 
 
-TARGET IS TO COVER DS BY NOVEMBER 
+TARGET IS TO COVER DS BY NOVEMBER 30 2020
 
 ##Topics Added
 -	ARRAY
@@ -16,5 +16,7 @@ TARGET IS TO COVER DS BY NOVEMBER
 -   RECURSION IN DEPTH
 -	TIME COMPLEXITY
 -	BACKTRACKING <recursioning but giving fallback condition>
--	TREES<BST, AVL>
+-	TREES<BST, AVL> 
+
+
 
